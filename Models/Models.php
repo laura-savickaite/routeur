@@ -20,6 +20,13 @@ class Model{
 
 	    }
 
+        public function selectAll(){
+
+        }
+
+        public function selectOne(){
+            
+        }
     
 }
 
