@@ -22,10 +22,12 @@ class Application {
          if(file_exists($controllerFile)){
             require_once($controllerFile);
 
-            // if(!empty($url[1])){
-            //     $task = $url[1];
-            //     $controllerName->$task;
-            // } 
+            if(!empty($url[1])){
+                $task = $url[1];
+            } 
+
+            $controller = new $controllerName();
+            $controller->$task();
          }
         // else {
         //     echo 'page introuvable';
