@@ -1,5 +1,12 @@
 <?php
 
-echo 'hello';
+class ControllerAccueil{
+
+    public function hello(){
+     echo 'hello';    
+    }
+        
+}
+
 
 ?>
