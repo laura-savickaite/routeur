@@ -1,14 +1,12 @@
 <?php
 
-class ControllerAccueil extends Controller{
-
-    // public $modelName = 'ModelsConnexion';
+class UserController{
 
     public function __construct(){
 
     }
 
-    public static function showNames(){
+    public static function selectAll (){
 
         $accueilModel = new ModelsConnexion();
         $result = $accueilModel->viewUsers();
@@ -20,10 +18,6 @@ class ControllerAccueil extends Controller{
             echo '<pre>' . $name['name'] . '</pre>';
                        
         }
-
-        // echo '<pre>';
-        // var_dump($result);
-        // echo '</pre>';
         return $result;
     }
 }
