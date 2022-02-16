@@ -6,20 +6,13 @@ class CommandesModels extends Model {
         parent::__construct();
     }
 
-    public function add($id_user, $id_product, $nom, $prix, $quantite){
-        $insert=$this->pdo-> prepare('INSERT INTO commandes SET id_user =: id_user, id_product =: id_product, nom=:nom, prix=:prix, quantite=:quantite');
-        $insert -> execute(['id_product'=>$id_product,'nom' => $nom, 'prix' => $prix, 'quantite' => $quantite]);
+    public function add($id_commande, $id_user, $id_product, $nom, $prix, $quantite){
+        $insert=$this->pdo-> prepare('INSERT INTO commandes SET id_commande =: id_commande, id_user =: id_user, id_product =: id_product, nom=:nom, prix=:prix, quantite=:quantite');
+        $insert -> execute(['id_commande' => $id_commande, 'id_product'=>$id_product,'nom' => $nom, 'prix' => $prix, 'quantite' => $quantite]);
     }
-    //quand l'user clique sur acheter le panier 
+    //quand l'user clique sur "passer commande"/acheter (remplissage des champs) le panier l'id commande ne s'autoincrémente pas alors faudra donner le même id pour tous
 
-    public function selectAll($id)
-    {
-        $selectAll = $this->pdo->prepare("SELECT * FROM commandes WHERE id=:id");
-        $selectAll -> execute(['id' => $id]);
-        $resultAll = $select->fetchAll();
-        return $resultAll;
-    }
-   //quand panier validé = commande validé donc envoie d'un mail avec toutes les informations, pour ceci va falloir select all de commandes (plus ou moins sauf les id, juste les noms et la quantité) 
+   //une fois la commande validée aka payée, ça se transforme en livraison
 }
 
 

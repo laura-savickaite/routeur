@@ -28,7 +28,7 @@ class PanierModels extends Model {
         $delete=$this->pdo-> prepare('DELETE FROM `products` WHERE id=:id');
         $delete -> execute(['id' => $id]);
     }
-    //quand clique sur payer on va insert dans commandes (donc à voir dans le model commandes) mais ici on delete AVEC l'id de l'utilisateur
+    //quand clique sur "passer commande"/payer (où on va rentrer des champs) on va insert dans commandes (donc à voir dans le model commandes) mais ici on delete AVEC l'id de l'utilisateur
 
 
     //à voir avec le bouton ajouter la quantité qui demandera selectOne et boucle incrémentant ou décrémentant 
