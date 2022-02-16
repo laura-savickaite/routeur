@@ -52,6 +52,10 @@ class UserModel extends Model {
     }
     //pour tout update globallement
 
-    
+    public function delete($id)
+    {
+        $delete=$this->pdo-> prepare('DELETE FROM `products` WHERE id=:id');
+        $delete -> execute(['id' => $id]);
+    }
 }
 ?>
