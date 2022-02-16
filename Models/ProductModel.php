@@ -38,6 +38,13 @@ class ProductModel extends Model {
         $delete=$this->pdo-> prepare('DELETE FROM `products` WHERE id=:id');
         $delete -> execute(['id' => $id]);
     }
+
+    public function update($id_categorie, $id)
+    {
+        $update=$this->pdo -> prepare('UPDATE `products` SET `id_categorie`=: id_categorie WHERE id=:id');
+        $update -> execute(['id_categorie' => $id_categorie, 'id' => $id]);
+    }
+    //pour update la catégorie de l'objet ou sa ss-catégorie juste je change l'id_categorie par ss_categorie
 }
 
 

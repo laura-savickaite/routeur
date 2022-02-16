@@ -6,7 +6,6 @@ class Model{
 
     Public function __construct(){ 
         $this->pdo = Database::getPDO();
-
 	    }
 
         public function selectAll(){
