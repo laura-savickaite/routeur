@@ -2,28 +2,11 @@
 
 class UserModel extends Model {
 
+    protected $table = 'user';
+
     public function __construct(){
         parent::__construct();
     }
-
-    public function selectAll()
-    {   
-        $selectAll = $this->pdo->prepare("SELECT * FROM user");
-        $selectAll -> execute();
-        $resultAll = $select->fetchAll();
-        return $resultAll;
-    }
-    //pour tous les afficher
-
-    public function selectOne($id)
-    {
-        $selectOne = $this->pdo->prepare("SELECT * FROM user WHERE id =: id");
-        $selectOne -> execute(['id' => $id]);
-        $resultOne = $select->fetch();
-        return $resultOne;
-    }
-    //pour en afficher 1 
-    //pour voir si le login est used
 
     public function insert($email, $password, $nom, $prenom, $adresse)
     {
@@ -52,10 +35,5 @@ class UserModel extends Model {
     }
     //pour tout update globallement
 
-    public function delete($id)
-    {
-        $delete=$this->pdo-> prepare('DELETE FROM `products` WHERE id=:id');
-        $delete -> execute(['id' => $id]);
-    }
 }
 ?>

@@ -20,12 +20,6 @@ class SsCategorieModels extends Model{
         $addOne -> execute(['nom' => $nom]);
     }
 
-    public function delete($id)
-    {
-        $delete=$this->pdo-> prepare('DELETE FROM `products` WHERE id=:id');
-        $delete -> execute(['id' => $id]);
-        
-    }
 
     public function updateOne($id_categorie, $id)
     {

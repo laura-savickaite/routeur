@@ -2,27 +2,11 @@
 
 class ProductModel extends Model {
 
+    protected $table = 'products';
+
     public function __construct(){
         parent::__construct();
     }
-
-    public function selectAll()
-    {
-        $selectAll = $this->pdo->prepare("SELECT * FROM products");
-        $selectAll -> execute();
-        $resultAll = $select->fetchAll();
-        return $resultAll;
-    }
-    //pour afficher tous les produits
-
-    public function selectOne($id)
-    {
-        $selectOne = $this->pdo->prepare("SELECT * FROM products WHERE id =: id");
-        $selectOne -> execute(['id' => $id]);
-        $resultOne = $select->fetch();
-        return $resultOne;
-    }
-    //pour afficher/sélectionner un produit via son id
 
     public function insert($nom, $description, $prix, $id_categorie, $id_ss_categorie, $quantite)
     {
@@ -32,12 +16,6 @@ class ProductModel extends Model {
         
     }
     //pour insérer le produit (à regarder pour insérer les images)
-
-    public function delete($id)
-    {
-        $delete=$this->pdo-> prepare('DELETE FROM `products` WHERE id=:id');
-        $delete -> execute(['id' => $id]);
-    }
 
     public function update($id_categorie, $id)
     {

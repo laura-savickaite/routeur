@@ -13,21 +13,8 @@ class PanierModels extends Model {
     }
     //insert into la table panier, tous les attributs seront du produit sélectionné lorsque cliqué sur le bouton "ajouter au panier" + la session de l'utilisateur
 
-    public function selectAll($id)
-    {
-        $selectAll = $this->pdo->prepare("SELECT * FROM panier WHERE id=:id");
-        $selectAll -> execute(['id' => $id]);
-        $resultAll = $select->fetchAll();
-        return $resultAll;
-    }
-    //c'est l'id de l'utilisateur attention 
 
-
-    public function delete($id)
-    {
-        $delete=$this->pdo-> prepare('DELETE FROM `products` WHERE id=:id');
-        $delete -> execute(['id' => $id]);
-    }
+    //delete :
     //quand clique sur "passer commande"/payer (où on va rentrer des champs) on va insert dans commandes (donc à voir dans le model commandes) mais ici on delete AVEC l'id de l'utilisateur
 
 

@@ -2,19 +2,13 @@
 
 class AvisModels extends Model{
 
+    protected $table = 'avis';
+
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function findAllReviews($id)
-    {
-        $query = $this->pdo->prepare('SELECT * FROM avis WHERE id_produit = :id');
-        $query->execute(['id_produit' => $id]);
-        $commentaires = $query->fetchAll();
-    
-        return $reviews;
-    }
     //star reviews : https://www.youtube.com/watch?v=NmF_00eAjD8
     //pour lire tous les commentaires sur un produit en particulier
     
