@@ -17,11 +17,6 @@ class CategorieModels extends Model {
     }
     //pour sélectionner tous les produits de cette catégorie
 
-    public function addOne($nom)
-    {
-        $addOne=$this->pdo -> prepare('INSERT INTO categorie SET nom=:nom');
-        $addOne -> execute(['nom' => $nom]);
-    }
 }
 
 ?>

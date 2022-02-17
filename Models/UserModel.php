@@ -3,17 +3,13 @@
 class UserModel extends Model {
 
     protected $table = 'user';
+    protected $set = 'name=:name';
+    // email=:email, password=:password, nom=:nom, prenom=:prenom, adresse=:adresse
 
     public function __construct(){
         parent::__construct();
     }
 
-    public function insert($email, $password, $nom, $prenom, $adresse)
-    {
-        $insert=$this->pdo -> prepare('INSERT INTO user SET email=:email, password=:password, nom=:nom, prenom=:prenom, adresse=:adresse');
-        $insert -> execute(['email' => $email, 'password' => $password, 'nom' => $nom, 'prenom' => $prenom, 'adresse' => $adresse]);
-    }
-    //pour insérer/inscrire
 
     public function updateLogin($email)
     {

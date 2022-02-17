@@ -2,15 +2,14 @@
 
 class PanierModels extends Model {
 
+    protected $table = 'panier';
+    protected $set = 'id_user =: id_user, id_product =: id_product, nom=:nom, prix=:prix';
+
     public function __construct(){
         parent::__construct();
     }
 
-    public function insert($id_user, $id_product, $nom, $prix, $quantite)
-    {
-        $insert=$this->pdo-> prepare('INSERT INTO panier SET id_user =: id_user, id_product =: id_product, nom=:nom, prix=:prix');
-        $insert -> execute(['id_product'=>$id_product,'nom' => $nom, 'prix' => $prix, 'quantite' => $quantite]);
-    }
+
     //insert into la table panier, tous les attributs seront du produit sélectionné lorsque cliqué sur le bouton "ajouter au panier" + la session de l'utilisateur
 
 

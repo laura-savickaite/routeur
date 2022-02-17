@@ -2,17 +2,15 @@
 
 class LivraisonModels extends Model {
 
+
+    protected $table = 'livraison';
+    protected $set = 'id =: id, id_commande =: id_commande, id_user =: id_user, id_product =: id_product, nom=:nom, prix=:prix, quantite=:quantite, adresse=:adresse, carte=:carte';
+
     public function __construct()
     {
         parent::__construct();
     }
 
-    public function add($id_livraison, $id_commande, $id_user, $id_product, $nom, $prix, $quantite, $adresse, $carte)
-    {
-        $insert=$this->pdo-> prepare('INSERT INTO livraison SET id_livraison =: id_livraison, id_commande =: id_commande, id_user =: id_user, id_product =: id_product, nom=:nom, prix=:prix, quantite=:quantite, adresse=:adresse, carte=:carte');
-        $insert -> execute(['id_livraison' => $id_livraison,'id_commande' => $id_commande, 'id_product'=>$id_product,'nom' => $nom, 'prix' => $prix, 'quantite' => $quantite]);
-        
-    }
 
     public function selectAllFrom($id)
     {

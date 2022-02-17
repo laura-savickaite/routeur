@@ -14,7 +14,7 @@ class Application {
             //ucfirst = première lettre en maj
             $controller = ucfirst(strtolower($url[0]));
             // echo $controller;
-            $controllerName = "Controller".$controller;
+            $controllerName = $controller."Controller";
             var_dump($controllerName);
             $controllerFile = "Controller/".$controllerName.".php";
 
@@ -22,8 +22,11 @@ class Application {
 
                 //si tu n'instancie pas ton objet, ton autoload ne trouvera pas dans quelle classe aller. En effet, l'autoload va dans application, c'est application qui va trouver selon l'url le controller (et donc l'autoload trouve ainsi sa classe puisqu'ils ont le même nom) ET la task qu'on lui demande grâce à l'url ici de dire hello
             
-            if ($controllerName == "ControllerAccueil") {
-                $controllerName::showNames();
+            if ($controllerName == "UserController") {
+                $controllerName::selectAll();
+            }
+            if ($controllerName == "UserController") {
+                $controllerName::add();
             }
         }
     }

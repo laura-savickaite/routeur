@@ -14,12 +14,6 @@ class SsCategorieModels extends Model{
         return $resultAllFrom;
     }
 
-    public function addOne($nom)
-    {
-        $addOne=$this->pdo -> prepare('INSERT INTO ss_categorie SET nom=:nom');
-        $addOne -> execute(['nom' => $nom]);
-    }
-
 
     public function updateOne($id_categorie, $id)
     {

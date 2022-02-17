@@ -7,9 +7,8 @@ class UserController{
     }
 
     public static function selectAll (){
-
-        $accueilModel = new ModelsConnexion();
-        $result = $accueilModel->viewUsers();
+        $accueilModel = new UserModel();
+        $result = $accueilModel->selectAll();      
         // obliger de boucler?? pour afficher le nom de chaque user? 
 
         //pour entrer dans un tableau il faut pas oublier que le foreach a une clé qui entre ds la première partie du tableau; donc siblez ds le echo le tableau en dessous. 
@@ -19,6 +18,14 @@ class UserController{
                        
         }
         return $result;
+
+    }
+
+    public static function add ()
+    {
+        // $name = 'test';
+        // $accueilModel = new UserModel();
+        // $result = $accueilModel->insertMany(compact ('name')); 
     }
 }
 
