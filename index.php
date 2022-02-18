@@ -17,7 +17,7 @@ Application::process();
 // $routeur = new Application;
 // $routeur->process();
 
-echo "hey";
+// echo "hey";
 
 // if(!empty($_GET['p'])){
 //     // le filter va filtrer ce qu'on a dans le get afin donc de sécuriser, le nom du filtre suit

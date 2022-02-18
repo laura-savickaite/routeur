@@ -1,8 +1,5 @@
 <?php
 
-// require_once('Controller/Controller.php');
-// require_once('Models/Models.php');
-
 class Application {
 
     public static function process() {
@@ -22,12 +19,15 @@ class Application {
 
                 //si tu n'instancie pas ton objet, ton autoload ne trouvera pas dans quelle classe aller. En effet, l'autoload va dans application, c'est application qui va trouver selon l'url le controller (et donc l'autoload trouve ainsi sa classe puisqu'ils ont le même nom) ET la task qu'on lui demande grâce à l'url ici de dire hello
             
+            // if ($controllerName == "UserController") {
+            //     $controllerName::selectAll();
+            // }
             if ($controllerName == "UserController") {
-                $controllerName::selectAll();
+                $controllerName::testcreate();
             }
-            if ($controllerName == "UserController") {
-                $controllerName::add();
-            }
+            // if ($controllerName == "UserController") {
+            //     $controllerName::update();
+            // }
         }
     }
 }

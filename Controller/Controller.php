@@ -9,8 +9,8 @@ Class Controller {
     //     $this->model = new $this->modelName();
     // }
 
-    Public function render(){
-        require_once('View/ViewAccueil.php');
-    }
+    // Public function render(){
+    //     require_once('View/ViewAccueil.php');
+    // }
 }
 
