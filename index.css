@@ -1,5 +1,28 @@
 /* ------------------------------------------------
 
+                    Custom properties
+
+--------------------------------------------------- */
+
+:root {
+    --clr-black: 0, 0, 0;
+    --clr-white: 255, 255, 255;
+    --clr-lightpink: 250, 225, 221;
+    --clr-pink: 254, 197, 187;
+    --clr-mint: 216, 226, 220;
+    --clr-lightmint: 232, 232, 228;
+
+    /* à utiliser comme ceci : <div class="bg-light">
+    .bg-light{
+        rgb(var(--clr-white));
+    }
+    comme ceci je serai en mesure de pouvoir gérer les alpha valeurs (opacité) */
+
+}
+
+
+/* ------------------------------------------------
+
                     RESET
 
 --------------------------------------------------- */
@@ -117,3 +140,4 @@ SINON rajouter avant container une autre class/un autre mot donc et après le d�
     <div class="box">d</div>
 
 </div>*/
+
