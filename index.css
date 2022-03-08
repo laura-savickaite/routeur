@@ -14,9 +14,9 @@
 
     /* à utiliser comme ceci : <div class="bg-light">
     .bg-light{
-        rgb(var(--clr-white));
+        background-color/ou color : rgb(var(--clr-white));
     }
-    comme ceci je serai en mesure de pouvoir gérer les alpha valeurs (opacité) */
+    comme ceci je serai en mesure de pouvoir gérer les alpha valeurs (opacité) au lieu d'avec le #0000 */
 
 }
 
